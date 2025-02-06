@@ -12,10 +12,15 @@ const client = createClient({
 });
 
 // 型定義
+export type Tag = {
+  name: string;
+} & MicroCMSListContent;
+
 export type Blog = {
   title: string;
   body: string;
   thumbnail: MicroCMSImage;
+  tags: Tag[];
 } & MicroCMSListContent;
 
 // APIの呼び出し
