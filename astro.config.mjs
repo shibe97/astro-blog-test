@@ -8,7 +8,7 @@ export default defineConfig({
   adapter: vercel({
     isr: {
       expiration: 60,
-      bypassToken: 'astro-isr-bypass',
+      bypassToken: 'f3a13dad-b3d3-635a-94b7-eed969401a99',
       exclude: ['/draft'],
     },
   }),
