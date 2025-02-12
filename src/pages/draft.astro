@@ -1,0 +1,12 @@
+---
+const draftKey = Astro.url.searchParams.get("dk") ?? undefined;
+const slug = Astro.url.searchParams.get("slug") ?? undefined;
+
+if (draftKey && slug) {
+  Astro.cookies.set('__prerender_bypass', 'astro-isr-bypass');
+  Astro.cookies.set(`__preview_slug`, slug);
+  Astro.cookies.set(`__preview_dk`, draftKey);
+}
+
+return Astro.redirect(`/${slug}`);
+---
