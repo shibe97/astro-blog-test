@@ -6,11 +6,9 @@ import { getBlogDetail } from "../libs/microcms";
 const { blogId } = Astro.params;
 const slug = Astro.cookies.get('__preview_slug');
 const draftKey = Astro.cookies.get('__preview_dk');
-console.log(`url: ` + Astro.request.url);
-// search paramsを取得
-Astro.url.searchParams.forEach((value, key) => {
-  console.log(`key: ${key}, value: ${value}`);
-});
+console.log(`url:` + Astro.request.url);
+console.log('href:' + Astro.url.href);
+console.log('search:' + Astro.url.search);
 
 if (slug?.value !== blogId) {
   Astro.cookies.delete(`__prerender_bypass`);
