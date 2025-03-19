@@ -6,6 +6,7 @@ import { getBlogDetail } from "../libs/microcms";
 const { blogId } = Astro.params;
 const slug = Astro.cookies.get('__preview_slug');
 const draftKey = Astro.cookies.get('__preview_dk');
+console.log(Astro.request.url);
 if (slug?.value !== blogId) {
   Astro.cookies.delete(`__prerender_bypass`);
   Astro.cookies.delete(`__preview_slug`);
